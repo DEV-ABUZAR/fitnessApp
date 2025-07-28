@@ -6,15 +6,57 @@ buildscript {
         targetSdkVersion = 35
         ndkVersion = "27.1.12297006"
         kotlinVersion = "2.1.20"
+       
     }
+
     repositories {
         google()
         mavenCentral()
     }
+
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        classpath("com.android.tools.build:gradle:8.4.1")
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.20")
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    // ✅ Global force for AndroidX + ExoPlayer compatibility
+    configurations.all {
+        resolutionStrategy {
+            force 'androidx.core:core:1.12.0'
+            force 'androidx.appcompat:appcompat:1.6.1'
+            force 'androidx.activity:activity:1.8.0' // Fixes OnUserLeaveHintProvider issue
+            force 'androidx.fragment:fragment:1.5.7'
+            force 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+            force 'com.google.android.exoplayer:exoplayer:2.18.1'
+        }
+    }
+}
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty("android")) {
+            project.android {
+                configurations.all {
+                    resolutionStrategy {
+                        // These are repeated for safety across subprojects
+                        force 'androidx.core:core:1.12.0'
+                        force 'androidx.appcompat:appcompat:1.6.1'
+                        force 'androidx.activity:activity:1.8.0'
+                        force 'androidx.fragment:fragment:1.5.7'
+                        force 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+                        force 'com.google.android.exoplayer:exoplayer:2.18.1'
+                    }
+                }
+            }
+        }
     }
 }
 

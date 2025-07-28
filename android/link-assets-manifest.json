@@ -15,7 +15,7 @@
     },
     {
       "path": "src/assets/fonts/Outfit/README.txt",
-      "sha1": "c3e5e355c16908e431a85f6d82ec49264c489bac"
+      "sha1": "c35b0e735e3c2061db53b6e748599e294fd9f655"
     },
     {
       "path": "src/assets/fonts/Outfit/static/Outfit-Black.ttf",
@@ -52,6 +52,30 @@
     {
       "path": "src/assets/fonts/Outfit/static/Outfit-Thin.ttf",
       "sha1": "a3b6a94f2d657f0bc9c89da16ff08b8332fc7d8a"
+    },
+    {
+      "path": "assets/bootsplash/logo.png",
+      "sha1": "fe7fc83391a01c04f04b3b27c1e471d1164372a0"
+    },
+    {
+      "path": "assets/bootsplash/logo@1,5x.png",
+      "sha1": "5ef2fd5f613586a340ae35545c55fa207f3cc871"
+    },
+    {
+      "path": "assets/bootsplash/logo@2x.png",
+      "sha1": "d6274c4febaeb2bc44c58dfd32593095137a5a83"
+    },
+    {
+      "path": "assets/bootsplash/logo@3x.png",
+      "sha1": "d61caf5bf66aa5f7e5e73d0ead95248643bab6d5"
+    },
+    {
+      "path": "assets/bootsplash/logo@4x.png",
+      "sha1": "98d0d91411ce8fa581116456cc3d92be5a86381e"
+    },
+    {
+      "path": "assets/bootsplash/manifest.json",
+      "sha1": "14b356dff78326b17f5b8a272e3f0e1684da8cfa"
     }
   ]
 }
